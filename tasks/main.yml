@@ -1,0 +1,24 @@
+---
+# tasks file for clone_app_repo
+- name: Cloning App Repo
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    force: yes
+    version: master
+  with_items: "{{ app_repos }}"
+
+- name: Create and Ensure log directory
+  file:
+    dest: "{{ app_folder }}logs"
+    state: directory
+
+- name: Change App Repo Permission  and Ownership
+  become: yes
+  file:
+    path: "{{ app_base_folder }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: 0755
+    recurse: yes

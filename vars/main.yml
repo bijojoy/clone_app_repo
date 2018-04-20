@@ -1,0 +1,5 @@
+---
+# vars file for clone_app_repo
+app_user: "app-user"
+app_base_folder: "/webapps"
+app_folder: "/webapps/devops/"

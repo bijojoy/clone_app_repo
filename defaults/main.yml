@@ -1,0 +1,6 @@
+---
+# defaults file for clone_app_repo
+app_repos:
+- name: DevOps challegne App repo
+  repo: https://bitbucket.org/azneita/devops-challenge.git
+  dest: "{{ app_folder }}/devops-challenge"
